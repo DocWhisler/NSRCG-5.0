@@ -1,4 +1,4 @@
 OmaDiaper
 =========
 
-This is a diaper from oma!
+This is a diaper from =OMA=!!!!!!!!
