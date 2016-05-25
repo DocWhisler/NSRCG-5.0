@@ -14,10 +14,10 @@
       <TextField fx:id="familyName" layoutX="165.0" layoutY="103.0" prefHeight="25.0" prefWidth="181.0" />
       <RadioButton id="maleRadio" fx:id="radioMale" layoutX="168.0" layoutY="190.0" mnemonicParsing="false" text="Männlich">
          <toggleGroup>
-            <ToggleGroup fx:id="Geschlecht" />
+            <ToggleGroup fx:id="geschlecht" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="radioFemale" layoutX="269.0" layoutY="190.0" mnemonicParsing="false" text="Weiblich" toggleGroup="$Geschlecht" />
+      <RadioButton fx:id="radioFemale" layoutX="269.0" layoutY="190.0" mnemonicParsing="false" text="Weiblich" toggleGroup="$geschlecht" />
       <TextField fx:id="streetName" layoutX="165.0" layoutY="141.0" prefHeight="25.0" prefWidth="181.0" />
       <Label layoutX="80.0" layoutY="146.0" text="Strasse:" />
       <Button id="btnAbort" layoutX="495.0" layoutY="339.0" mnemonicParsing="false" text="Abbrechen" />
