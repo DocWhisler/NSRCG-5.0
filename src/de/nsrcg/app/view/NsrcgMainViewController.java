@@ -1,5 +1,6 @@
-package de.nsrcg.app;
+package de.nsrcg.app.view;
 
+import de.nsrcg.app.NsrcgMain;
 import de.nsrcg.app.constances.CharacterGender;
 import de.nsrcg.app.models.shadowrun5.SRCharacter;
 import javafx.event.ActionEvent;
@@ -8,9 +9,16 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
-public class GeneratorControler {
-	private SRCharacter currentCharacter = new SRCharacter();
-    
+public class NsrcgMainViewController {
+	
+	public NsrcgMain main;
+	
+	public void setMain(NsrcgMain main) {
+		this.main = main;
+	}
+
+	private SRCharacter currentCharacter = new SRCharacter();    	
+	
     @FXML private RadioButton radioMale;
     @FXML private RadioButton radioFemale;
     @FXML private ToggleGroup geschlecht;
@@ -18,7 +26,8 @@ public class GeneratorControler {
     @FXML private TextField familyName;
     @FXML private TextField streetName;
 	
-    @FXML protected void nextButton(ActionEvent event) {    	
+    @FXML 
+    protected void nextButton(ActionEvent event) {    	
     	if(radioMale.isSelected()) {
     		currentCharacter.setCharGender(CharacterGender.male);
     	} else {
