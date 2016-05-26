@@ -42,7 +42,7 @@ public class NsrcgMain extends Application {
 	public void showPrioritySystem() {
 		try{
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(NsrcgMain.class.getResource("view/PrioritySystem.fxml"));
+			loader.setLocation(NsrcgMain.class.getResource("view/PrioritySystemView.fxml"));
 			Pane pane = loader.load();
 		
 			PrioritySystemController controller = loader.getController();
