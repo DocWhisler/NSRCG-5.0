@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.nsrcg.app.view.NsrcgMainViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.nsrcg.app.view.NsrcgMainViewController">
    <children>
       <GridPane hgap="5.0" layoutX="80.0" layoutY="20.0" prefHeight="278.0" prefWidth="449.0" vgap="5.0">
          <columnConstraints>
@@ -43,7 +43,7 @@
             <TextField fx:id="description" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
-      <Group>
+      <Group layoutX="200.0" layoutY="199.0">
          <children>
             <Button id="btnNext" layoutX="516.0" layoutY="361.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="25.0" prefWidth="70.0" text="Weiter" />
             <Button id="btnAbort" alignment="CENTER" contentDisplay="CENTER" layoutX="434.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="70.0" text="Exit" textAlignment="CENTER" />

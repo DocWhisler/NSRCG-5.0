@@ -36,8 +36,17 @@ public class PrioritySystemController {
 		}		
 	}
 	
-	public void setMain(NsrcgMain main) {
-		this.main = main;
+	@FXML
+	protected void nextButton() {
+		//XXX nächste Seite
 	}
 	
+	@FXML
+	protected void backButton() {
+		main.showMainView();
+	}
+	
+	public void setMain(NsrcgMain main) {
+		this.main = main;
+	}	
 }
