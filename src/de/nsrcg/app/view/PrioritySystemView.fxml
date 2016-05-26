@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="380.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.nsrcg.app.view.PrioritySystemController">
+<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.nsrcg.app.view.PrioritySystemController">
    <children>
 								<GridPane alignment="CENTER" prefHeight="380.0" prefWidth="612.0">
 									<columnConstraints>
@@ -67,5 +67,11 @@
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="96.0" text="Priorität" />
 									</children>
 								</GridPane>
+      <Group>
+         <children>
+            <Button layoutX="634.0" layoutY="561.0" mnemonicParsing="false" onAction="#backButton" prefHeight="25.0" prefWidth="70.0" text="Zurück" />
+            <Button layoutX="716.0" layoutY="561.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="25.0" prefWidth="70.0" text="Weiter" />
+         </children>
+      </Group>
    </children>
 </Pane>
