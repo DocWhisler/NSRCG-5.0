@@ -20,7 +20,12 @@ public class NsrcgMainViewController {
     @FXML private ToggleGroup geschlecht;
     @FXML private TextField firstName;
     @FXML private TextField familyName;
-    @FXML private TextField streetName;
+    @FXML private TextField streetName;    
+    @FXML private TextField age;
+    @FXML private TextField weight;
+    @FXML private TextField size;
+    @FXML private TextField streetCall;
+    @FXML private TextField description;    
 	
     @FXML 
     protected void nextButton(ActionEvent event) {    	
@@ -33,6 +38,11 @@ public class NsrcgMainViewController {
     	currentCharacter.setFirstName(firstName.getText());
     	currentCharacter.setFamilyName(familyName.getText());
     	currentCharacter.setStreetName(streetName.getText());
+    	currentCharacter.setAge(age.getText());
+    	currentCharacter.setWeight(weight.getText());
+    	currentCharacter.setSize(size.getText());
+    	currentCharacter.setStreetCall(streetCall.getText());
+    	currentCharacter.setDescription(description.getText());
     	
         currentCharacter.show();
         
