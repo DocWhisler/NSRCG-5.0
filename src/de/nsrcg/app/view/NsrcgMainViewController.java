@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class NsrcgMainViewController {
-	
+	//Wirklich public??
 	public NsrcgMain main;
 	
 	private SRCharacter currentCharacter = new SRCharacter();    	

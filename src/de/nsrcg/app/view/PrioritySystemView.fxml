@@ -31,29 +31,29 @@
 										<ToggleButton fx:id="da" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 										<ToggleButton fx:id="ea" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 										
-                  										<ToggleButton fx:id="ab" mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="24" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="20" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="16" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="14" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="12" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  						<ToggleButton fx:id="ab" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="24" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+										<ToggleButton fx:id="bb" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="20" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+										<ToggleButton fx:id="cb" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="16" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+										<ToggleButton fx:id="db" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="14" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+										<ToggleButton fx:id="eb" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="12" GridPane.columnIndex="2" GridPane.rowIndex="5" />
 										
-                  										<ToggleButton fx:id="ac" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  						<ToggleButton fx:id="ac" mnemonicParsing="false" onAction="#onClick" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+										<ToggleButton fx:id="bc" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+										<ToggleButton fx:id="cc" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+										<ToggleButton fx:id="dc" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+										<ToggleButton fx:id="ec" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
 									
-                  										<ToggleButton fx:id="ad" mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="46/10" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="36/5" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="28/2" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="22/0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="18/0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  						<ToggleButton fx:id="ad" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="46/10" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+										<ToggleButton fx:id="bd" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="36/5" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+										<ToggleButton fx:id="cd" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="28/2" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+										<ToggleButton fx:id="dd" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="22/0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+										<ToggleButton fx:id="ed" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="18/0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
 										
-                  										<ToggleButton fx:id="ae" mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="450.000" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="275.000" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="140.000" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="50.000" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-										<ToggleButton mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="6.000" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  						<ToggleButton fx:id="ae" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="450.000" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+										<ToggleButton fx:id="be" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="275.000" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+										<ToggleButton fx:id="ce" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="140.000" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+										<ToggleButton fx:id="de" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="50.000" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+										<ToggleButton fx:id="ee" mnemonicParsing="false" onAction="#onClick" prefHeight="77.0" prefWidth="103.0" text="6.000" GridPane.columnIndex="5" GridPane.rowIndex="5" />
             <Label alignment="CENTER" prefHeight="21.0" prefWidth="100.0" text="Metatype" GridPane.columnIndex="1" />
             <Label text="Attribute" GridPane.columnIndex="2" />
             <Label prefHeight="54.0" prefWidth="100.0" text="Magie und Resonanz" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" />
