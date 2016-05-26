@@ -39,6 +39,12 @@ public class NsrcgMainViewController {
         main.showPrioritySystem();
     }  
     
+    @FXML
+    protected void exitButton(ActionEvent event)
+    {
+    	main.exitProgramm();
+    }
+    
     public void setMain(NsrcgMain main) {
 		this.main = main;
 	}

@@ -32,7 +32,7 @@ public class NsrcgMain extends Application {
 		
 			Scene scene = new Scene(pane);
 			this.primaryStage.setScene(scene);
-			this.primaryStage.show();
+			this.primaryStage.show();			
 		
 		} catch (IOException e) {			
 			e.printStackTrace();
@@ -57,6 +57,10 @@ public class NsrcgMain extends Application {
 		}	
 	}
 
+	public void exitProgramm(){
+		this.primaryStage.close();
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
