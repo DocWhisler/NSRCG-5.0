@@ -13,10 +13,6 @@ public class NsrcgMainViewController {
 	
 	public NsrcgMain main;
 	
-	public void setMain(NsrcgMain main) {
-		this.main = main;
-	}
-
 	private SRCharacter currentCharacter = new SRCharacter();    	
 	
     @FXML private RadioButton radioMale;
@@ -39,5 +35,11 @@ public class NsrcgMainViewController {
     	currentCharacter.setStreetName(streetName.getText());
     	
         currentCharacter.show();
-    }    
+        
+        main.showPrioritySystem();
+    }  
+    
+    public void setMain(NsrcgMain main) {
+		this.main = main;
+	}
 }

@@ -3,6 +3,7 @@ package de.nsrcg.app;
 import java.io.IOException;
 
 import de.nsrcg.app.view.NsrcgMainViewController;
+import de.nsrcg.app.view.PrioritySystemController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -33,6 +34,24 @@ public class NsrcgMain extends Application {
 			this.primaryStage.setScene(scene);
 			this.primaryStage.show();
 		
+		} catch (IOException e) {			
+			e.printStackTrace();
+		}	
+	}
+	
+	public void showPrioritySystem() {
+		try{
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(NsrcgMain.class.getResource("view/PrioritySystem.fxml"));
+			Pane pane = loader.load();
+		
+			PrioritySystemController controller = loader.getController();
+			controller.setMain(this);
+		
+			Scene scene = new Scene(pane);
+			this.primaryStage.setScene(scene);
+			this.primaryStage.show();
+	
 		} catch (IOException e) {			
 			e.printStackTrace();
 		}	
