@@ -1,6 +1,7 @@
 package de.nsrcg.app;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import de.nsrcg.app.view.NsrcgMainViewController;
 import de.nsrcg.app.view.PrioritySystemController;
@@ -19,9 +20,17 @@ public class NsrcgMain extends Application {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("NSRCG 5.0");
 		
-		showMainView();
+		H2Database h2 = new H2Database();
+		
+		try {
+			h2.startConnection();
+		} catch (ClassNotFoundException | SQLException e) {			
+			e.printStackTrace();
+		}
+		
+		this.showMainView();
 	}
-
+	
 	public void showMainView() {		
 		try {
 			FXMLLoader loader = new FXMLLoader(NsrcgMain.class.getResource("view/NsrcgMainView.fxml"));
@@ -61,7 +70,7 @@ public class NsrcgMain extends Application {
 		this.primaryStage.close();
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
 		launch(args);
 	}
 }
