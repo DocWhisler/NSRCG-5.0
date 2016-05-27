@@ -10,9 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class NsrcgMainViewController {
-	//Wirklich public??
-	public NsrcgMain main;
 	
+	private NsrcgMain main;	
 	private SRCharacter currentCharacter = new SRCharacter();    	
 	
     @FXML private RadioButton radioMale;
