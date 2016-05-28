@@ -24,29 +24,29 @@ public class PrioritySystemController {
 		
 		int row = (int) test.getId().substring(0, 1).charAt(0) - 97;
 		int column = (int) test.getId().substring(1, 2).charAt(0) - 97;
-//		
-//		// Check ob in der Zeile schon was ist
-//		for (int i = 0; i < arrayOfDeath.length; i++) {
-//			if(arrayOfDeath[row][i] == 1) {
-//				arrayOfDeath[row][i] = 0;
-//				char rowChar = (char) (row + 97);
-//				char columnChar = (char) (i + 97);
-//				Scene scene = test.getParent().getScene();
-//				ToggleButton tb = (ToggleButton) scene.lookup("#" + rowChar + columnChar);
-//				tb.setSelected(false);
-//			}
-//		}	
-		// Check ob in der Spalte schon was ist
+		
+		// Check ob in der Zeile schon was ist
 		for (int i = 0; i < arrayOfDeath.length; i++) {
-			if(arrayOfDeath[i][column] == 1) {
-				arrayOfDeath[i][column] = 0;
-				char rowChar = (char) (i + 97);
-				char columnChar = (char) (column + 97);
+			if(arrayOfDeath[row][i] == 1) {
+				arrayOfDeath[row][i] = 0;
+				char rowChar = (char) (row + 97);
+				char columnChar = (char) (i + 97);
 				Scene scene = test.getParent().getScene();
 				ToggleButton tb = (ToggleButton) scene.lookup("#" + rowChar + columnChar);
 				tb.setSelected(false);
 			}
 		}	
+		// Check ob in der Spalte schon was ist
+//		for (int i = 0; i < arrayOfDeath.length; i++) {
+//			if(arrayOfDeath[i][column] == 1) {
+//				arrayOfDeath[i][column] = 0;
+//				char rowChar = (char) (i + 97);
+//				char columnChar = (char) (column + 97);
+//				Scene scene = test.getParent().getScene();
+//				ToggleButton tb = (ToggleButton) scene.lookup("#" + rowChar + columnChar);
+//				tb.setSelected(false);
+//			}
+//		}	
 		// Neuen Punkt setzen. 
 		arrayOfDeath[row][column] = 1;
 		
@@ -61,6 +61,7 @@ public class PrioritySystemController {
 	@FXML
 	protected void nextButton() {
 		//XXX nächste Seite
+		this.main.showRaceChoose();
 	}
 	
 	@FXML

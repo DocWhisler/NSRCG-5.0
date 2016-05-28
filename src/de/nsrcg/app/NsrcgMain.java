@@ -2,9 +2,13 @@ package de.nsrcg.app;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import de.nsrcg.app.view.NsrcgMainViewController;
 import de.nsrcg.app.view.PrioritySystemController;
+import de.nsrcg.app.view.RacesChooseController;
+import de.shadowrunrpg.nscrg.core.GeneratorCore;
+import de.shadowrunrpg.nscrg.core.costance.ListType;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -21,7 +25,6 @@ public class NsrcgMain extends Application {
 		this.primaryStage.setTitle("NSRCG 5.0");
 		
 		H2Database h2 = new H2Database();
-		
 		try {
 			h2.startConnection();
 		} catch (ClassNotFoundException | SQLException e) {			
@@ -53,8 +56,26 @@ public class NsrcgMain extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(NsrcgMain.class.getResource("view/PrioritySystemView.fxml"));
 			Pane pane = loader.load();
-		
+
 			PrioritySystemController controller = loader.getController();
+			controller.setMain(this);
+		
+			Scene scene = new Scene(pane);
+			this.primaryStage.setScene(scene);
+			this.primaryStage.show();
+	
+		} catch (IOException e) {			
+			e.printStackTrace();
+		}	
+	}
+	
+	public void showRaceChoose() {
+		try{
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(NsrcgMain.class.getResource("view/RasenauswahlView.fxml"));
+			Pane pane = loader.load();
+
+			RacesChooseController controller = loader.getController();
 			controller.setMain(this);
 		
 			Scene scene = new Scene(pane);

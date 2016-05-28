@@ -1,0 +1,37 @@
+2016-05-28 13:23:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "CREATE TABLE IF NOT EXISTS CLASSES (ID								INTEGER PRIMARY KEY AUTO_INCREMENT(-1,1),	NAME							TEXT    NOT NULL,	LANGUAGE						TEXT    NOT NULL [*]"; erwartet "AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CLASSES (ID								INTEGER PRIMARY KEY AUTO_INCREMENT(-1,1),	NAME							TEXT    NOT NULL,	LANGUAGE						TEXT    NOT NULL [*]"; expected "AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS classes (id								INTEGER PRIMARY KEY AUTO_INCREMENT(-1,1),	name							TEXT    NOT NULL,	language						TEXT    NOT NULL [42001-191]
+2016-05-28 13:25:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Anzahl der Felder stimmt nicht überein
+Column count does not match; SQL statement:
+INSERT into Classes (name)VALUES ('Elf' , 'de'), ('Mensch', 'de') , ('Ork', 'de') , ('Troll', 'de') , ('Zwerg', 'de'); [21002-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:126)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:115)
+	at de.shadowrunrpg.nscrg.core.database.InitDatabase.createMetaraces(InitDatabase.java:30)
+	at de.shadowrunrpg.nscrg.core.database.InitDatabase.run(InitDatabase.java:14)
+	at de.shadowrunrpg.nscrg.core.database.DBManager.<init>(DBManager.java:11)
+	at de.shadowrunrpg.nscrg.core.GeneratorCore.<init>(GeneratorCore.java:14)
+	at de.nsrcg.app.NsrcgMain.<init>(NsrcgMain.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$161(LauncherImpl.java:819)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:745)
