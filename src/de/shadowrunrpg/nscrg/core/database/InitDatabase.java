@@ -16,13 +16,13 @@ public class InitDatabase {
 	
 	private void createMetaraces() {
 		try {
-			initStatement = this.dbconn.createStatement();
+			this.initStatement = this.dbconn.createStatement();
 			String sql = "CREATE TABLE IF NOT EXISTS races "
 					+ "(id								INTEGER PRIMARY KEY AUTO_INCREMENT(-1,1),"
 					+ "	name							TEXT    NOT NULL,"
 					+ "	language						TEXT    NOT NULL)";
-			initStatement.executeUpdate(sql);
-			initStatement.close();
+			this.initStatement.executeUpdate(sql);
+			this.initStatement.close();
 			this.dbconn.commit();
 			Statement stmt = this.dbconn.createStatement();
 			String sql2 = "INSERT into races (name, language)"
@@ -34,5 +34,4 @@ public class InitDatabase {
 			e.printStackTrace();
 		}
 	}
-
 }

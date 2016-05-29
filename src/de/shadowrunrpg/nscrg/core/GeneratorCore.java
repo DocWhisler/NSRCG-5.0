@@ -3,7 +3,7 @@ package de.shadowrunrpg.nscrg.core;
 import java.util.List;
 
 import de.nsrcg.app.models.shadowrun5.SRCharacter;
-import de.shadowrunrpg.nscrg.core.costance.ListType;
+import de.shadowrunrpg.nscrg.core.constances.ListType;
 import de.shadowrunrpg.nscrg.core.database.DBManager;
 
 public class GeneratorCore {

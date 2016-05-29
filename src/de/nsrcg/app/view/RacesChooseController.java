@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 import de.nsrcg.app.NsrcgMain;
 import de.shadowrunrpg.nscrg.core.GeneratorCore;
-import de.shadowrunrpg.nscrg.core.costance.ListType;
+import de.shadowrunrpg.nscrg.core.constances.ListType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,14 +16,10 @@ import javafx.scene.control.ComboBox;
 public class RacesChooseController  implements Initializable {
 	
 	public NsrcgMain main; 
-	@FXML
-	ComboBox<String> raceChoose;
+	
 	private GeneratorCore core = new GeneratorCore();
-    
-    public void setMain(NsrcgMain main) {
-		this.main = main;
-	}
 
+	@FXML private ComboBox<String> raceChoose;    
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -33,5 +29,9 @@ public class RacesChooseController  implements Initializable {
 			    FXCollections.observableArrayList(raceList);
 		raceChoose.setItems(options);
 		
+	}
+	
+	public void setMain(NsrcgMain main) {
+			this.main = main;
 	}
 }

@@ -1,14 +1,9 @@
 package de.nsrcg.app;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
-
 import de.nsrcg.app.view.NsrcgMainViewController;
 import de.nsrcg.app.view.PrioritySystemController;
 import de.nsrcg.app.view.RacesChooseController;
-import de.shadowrunrpg.nscrg.core.GeneratorCore;
-import de.shadowrunrpg.nscrg.core.costance.ListType;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,14 +17,7 @@ public class NsrcgMain extends Application {
 	@Override
 	public void start(Stage primaryStage) {		
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("NSRCG 5.0");
-		
-		H2Database h2 = new H2Database();
-		try {
-			h2.startConnection();
-		} catch (ClassNotFoundException | SQLException e) {			
-			e.printStackTrace();
-		}
+		this.primaryStage.setTitle("NSRCG 5.0");		
 		
 		this.showMainView();
 	}
