@@ -59,8 +59,7 @@ public class PrioritySystemController {
 	}
 	
 	@FXML
-	protected void nextButton() {
-		//XXX nächste Seite
+	protected void nextButton() {		
 		this.main.showRaceChoose();
 	}
 	

@@ -1,6 +1,8 @@
 package de.nsrcg.app;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import de.nsrcg.app.view.NsrcgMainViewController;
 import de.nsrcg.app.view.PrioritySystemController;
 import de.nsrcg.app.view.RacesChooseController;
@@ -18,6 +20,15 @@ public class NsrcgMain extends Application {
 	public void start(Stage primaryStage) {		
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("NSRCG 5.0");		
+		
+		NsrcgClient client = new NsrcgClient();
+		
+		try {
+			client.startConnection();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
 		
 		this.showMainView();
 	}
