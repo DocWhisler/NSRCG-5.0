@@ -3,6 +3,7 @@ package de.nsrcg.app;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import de.nsrcg.app.db.NsrcgClient;
 import de.nsrcg.app.view.NsrcgMainViewController;
 import de.nsrcg.app.view.PrioritySystemController;
 import de.nsrcg.app.view.RacesChooseController;

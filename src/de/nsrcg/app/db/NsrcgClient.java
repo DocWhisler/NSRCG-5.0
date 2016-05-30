@@ -1,4 +1,4 @@
-package de.nsrcg.app;
+package de.nsrcg.app.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

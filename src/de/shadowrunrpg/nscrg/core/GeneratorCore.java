@@ -2,7 +2,7 @@ package de.shadowrunrpg.nscrg.core;
 
 import java.util.List;
 
-import de.nsrcg.app.models.shadowrun5.SRCharacter;
+import de.nsrcg.app.models.shadowrun5.SRCharacterOriginal;
 import de.shadowrunrpg.nscrg.core.constances.ListType;
 import de.shadowrunrpg.nscrg.core.database.DBManager;
 
@@ -21,7 +21,7 @@ public class GeneratorCore {
 		return null;
 	}
 
-	public int validateCharacter(SRCharacter character) {
+	public int validateCharacter(SRCharacterOriginal character) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

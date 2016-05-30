@@ -2,7 +2,7 @@ package de.nsrcg.app.view;
 
 import de.nsrcg.app.NsrcgMain;
 import de.nsrcg.app.constances.CharacterGender;
-import de.nsrcg.app.models.shadowrun5.SRCharacter;
+import de.nsrcg.app.models.shadowrun5.SRCharacterOriginal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
@@ -12,7 +12,7 @@ import javafx.scene.control.ToggleGroup;
 public class NsrcgMainViewController {
 	
 	private NsrcgMain main;	
-	private SRCharacter currentCharacter = new SRCharacter();    	
+	private SRCharacterOriginal currentCharacter = new SRCharacterOriginal();    	
 	
     @FXML private RadioButton radioMale;
     @FXML private RadioButton radioFemale;
