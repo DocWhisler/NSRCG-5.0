@@ -1,6 +1,6 @@
-package de.nsrcg.app.db;
+package de.nsrcg.app.models.shadowrun5;
 
-import de.nsrcg.app.models.shadowrun5.SRCharacter;
+import de.nsrcg.app.db.CRUDDAO;
 
 public interface SRCharacterDAO extends CRUDDAO<SRCharacter, SRCharacterDAO.Selector> {
 

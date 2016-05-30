@@ -3,6 +3,7 @@ package de.nsrcg.app.db;
 import java.util.Collection;
 
 import de.nsrcg.app.models.shadowrun5.SRCharacter;
+import de.nsrcg.app.models.shadowrun5.SRCharacterDAO;
 
 public class SqlSRCharacterDAO implements SRCharacterDAO {
 
