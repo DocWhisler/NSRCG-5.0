@@ -6,6 +6,10 @@ public class SRCharacterProxy implements SRCharacter{
 
 	private SRCharacter state;
 	
+	public SRCharacterProxy(SRCharacter state) {
+		this.state = state;
+	}
+	
 	@Override
 	public String getFirstName() {
 		return state.getFirstName();
