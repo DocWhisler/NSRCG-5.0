@@ -1,37 +1,58 @@
 package de.shadowrunrpg.nscrg.core.database;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import de.shadowrunrpg.nscrg.core.entities.Metarace;
 
 public class InitDatabase {
 
-	private Connection dbconn = null;
-	private Statement initStatement = null;
+	private EntityManagerFactory factory = null;
 	
-	public void run(Connection conn) {
-		this.dbconn = conn;
+	public void run(EntityManagerFactory factory) {
+		this.factory = factory;
 		this.createMetaraces();
 	}
 	
 	private void createMetaraces() {
-		try {
-			this.initStatement = this.dbconn.createStatement();
-			String sql = "CREATE TABLE IF NOT EXISTS races "
-					+ "(id								INTEGER PRIMARY KEY AUTO_INCREMENT(-1,1),"
-					+ "	name							TEXT    NOT NULL,"
-					+ "	language						TEXT    NOT NULL)";
-			this.initStatement.executeUpdate(sql);
-			this.initStatement.close();
-			this.dbconn.commit();
-			Statement stmt = this.dbconn.createStatement();
-			String sql2 = "INSERT into races (name, language)"
-					+ "VALUES ('Elf' , 'de'), ('Mensch', 'de') , ('Ork', 'de') , ('Troll', 'de') , ('Zwerg', 'de');";
-			stmt.executeUpdate(sql2);
-			stmt.close();
-			this.dbconn.commit();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		factory = Persistence.createEntityManagerFactory("metaraces");
+		EntityManager em = factory.createEntityManager();
+		// create new Race
+		em.getTransaction().begin();
+		Metarace todo = new Metarace();
+		todo.setRaceName("Troll");
+		todo.setLanguage("de");
+		em.persist(todo);
+		em.getTransaction().commit();
+		
+		em.getTransaction().begin();
+		todo = new Metarace();
+		todo.setRaceName("Elf");
+		todo.setLanguage("de");
+		em.persist(todo);
+		em.getTransaction().commit();
+	
+		em.getTransaction().begin();
+		todo = new Metarace();
+		todo.setRaceName("Mensch");
+		todo.setLanguage("de");
+		em.persist(todo);
+		em.getTransaction().commit();
+		
+		em.getTransaction().begin();
+		todo = new Metarace();
+		todo.setRaceName("Zwerg");
+		todo.setLanguage("de");
+		em.persist(todo);
+		em.getTransaction().commit();
+		
+		em.getTransaction().begin();
+		todo = new Metarace();
+		todo.setRaceName("Ork");
+		todo.setLanguage("de");
+		em.persist(todo);
+		em.getTransaction().commit();
+	
 	}
 }
