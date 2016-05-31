@@ -1,36 +1,44 @@
 package de.shadowrunrpg.nscrg.core.database;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+
+import de.shadowrunrpg.nscrg.core.entities.Metarace;
+
 public class DBManager {
-	private Connection dbConn = H2ConnectionManager.getH2Connection();
-	private Statement initStatement;
+	private static EntityManagerFactory factory;
 	
 	public DBManager(boolean init) {
-		if(init == true) {
-			InitDatabase initProcess = new InitDatabase();
-			initProcess.run(this.dbConn);
+
+		if (init == true) {
+			 InitDatabase initProcess = new InitDatabase();
+			 initProcess.run(factory);
 		}
 	}
-	
+
 	public List<String> getRaces() {
 		List<String> resultList = new ArrayList<String>();
-		try {
-			initStatement = this.dbConn.createStatement();
-			String sql = "SELECT name FROM races";
-			ResultSet rs = initStatement.executeQuery(sql);
-			while (rs.next()) {
-				resultList.add(rs.getString("name"));
-			}
-			initStatement.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		factory = Persistence.createEntityManagerFactory("metaraces");
+		EntityManager em = factory.createEntityManager();
+		// read the existing entries and write to console
+		Query q = em.createQuery("SELECT t FROM Metarace t");
+		List<Metarace> todoList = q.getResultList();
+		for (Metarace todo : todoList) {
+			System.out.println(todo);
+			resultList.add(todo.getRaceName());
 		}
+		System.out.println("Size: " + todoList.size());
+
+		em.close();		
 		return resultList;
 	}
 }

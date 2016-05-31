@@ -11,7 +11,7 @@ public class GeneratorCore {
 	private DBManager dbmanager;
 	
 	public GeneratorCore() {
-		this.dbmanager = new DBManager(false);
+		this.dbmanager = new DBManager(true);
 	}
 
 	public List<String> getItemList(ListType name) {
