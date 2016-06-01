@@ -1,12 +1,12 @@
 package de.nsrcg.app.db;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 public interface CRUDDAO<Interface, Selector> {
 
 	public Interface create(Interface plainDataObject);
     
-	public Collection<Interface> read(Selector selector);
+	public ArrayList<Interface> read(Selector selector);
     
 	public void update(Interface dataTransferObject);
     
