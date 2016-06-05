@@ -11,17 +11,16 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-
 import de.shadowrunrpg.nscrg.core.entities.Metarace;
 
 public class DBManager {
 	private static EntityManagerFactory factory;
-	
+
 	public DBManager(boolean init) {
 
 		if (init == true) {
-			 InitDatabase initProcess = new InitDatabase();
-			 initProcess.run(factory);
+			InitDatabase initProcess = new InitDatabase();
+			initProcess.run(factory);
 		}
 	}
 
@@ -36,7 +35,20 @@ public class DBManager {
 		for (Metarace todo : todoList) {
 			resultList.add(todo.getRaceName());
 		}
-		em.close();		
+		em.close();
 		return resultList;
+	}
+
+	public List<String> getSpecficRaces(String category) {
+		factory = Persistence.createEntityManagerFactory("metaraces");
+		EntityManager em = factory.createEntityManager();
+		// Begin a new local transaction so that we can persist a new entity
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT t.raceName FROM Metarace t JOIN t.categories c where c.category like :category");
+		q.setParameter("category", category);
+		@SuppressWarnings("unchecked")
+		List<String> result = (List<String>) q.getResultList();
+		em.close();
+		return result;
 	}
 }

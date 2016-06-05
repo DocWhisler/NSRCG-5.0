@@ -8,16 +8,17 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import de.shadowrunrpg.nscrg.core.entities.Metarace;
+import de.shadowrunrpg.nscrg.core.entities.MetaraceCategory;
 
 public class InitDatabase {
 
 	private EntityManagerFactory factory = null;
+	private String metaRaceTableName = "metaraces";
+	private String metaRaceCategoryName = "metaraceCategory";
+	
 
 	public void run(EntityManagerFactory factory) {
-		this.factory = factory;
-		
-		String metaRaceTableName = "metaraces";
-		
+		this.factory = factory;		
 		if(CheckIfTableHasEntries(metaRaceTableName) == false) {
 			this.createMetaraces();
 		};
@@ -41,41 +42,70 @@ public class InitDatabase {
 	private void createMetaraces() {
 		factory = Persistence.createEntityManagerFactory("metaraces");
 		EntityManager em = factory.createEntityManager();
+		
 		// create new Race
 		em.getTransaction().begin();
-		Metarace todo = new Metarace();
-		todo.setRaceName("Troll");
-		todo.setLanguage("de");
-		em.persist(todo);
+		Metarace race = new Metarace();
+		createRaceCategory(em, race, "A", 5);
+		createRaceCategory(em, race, "B", 0);
+		race.setRaceName("Troll");
+		race.setLanguage("de");
+		em.persist(race);
 		em.getTransaction().commit();
 
 		em.getTransaction().begin();
-		todo = new Metarace();
-		todo.setRaceName("Elf");
-		todo.setLanguage("de");
-		em.persist(todo);
+		race = new Metarace();
+		createRaceCategory(em, race, "A", 8);
+		createRaceCategory(em, race, "B", 6);
+		createRaceCategory(em, race, "C", 3);
+		createRaceCategory(em, race, "D", 0);
+		race.setRaceName("Elf");
+		race.setLanguage("de");
+		em.persist(race);
 		em.getTransaction().commit();
 
 		em.getTransaction().begin();
-		todo = new Metarace();
-		todo.setRaceName("Mensch");
-		todo.setLanguage("de");
-		em.persist(todo);
+		race = new Metarace();
+		createRaceCategory(em, race, "A", 9);
+		createRaceCategory(em, race, "B", 7);
+		createRaceCategory(em, race, "C", 5);
+		createRaceCategory(em, race, "D", 3);
+		createRaceCategory(em, race, "E", 1);		
+		race.setRaceName("Mensch");
+		race.setLanguage("de");
+		em.persist(race);
 		em.getTransaction().commit();
 
 		em.getTransaction().begin();
-		todo = new Metarace();
-		todo.setRaceName("Zwerg");
-		todo.setLanguage("de");
-		em.persist(todo);
+		race = new Metarace();
+		createRaceCategory(em, race, "A", 7);
+		createRaceCategory(em, race, "B", 4);
+		createRaceCategory(em, race, "C", 1);
+		
+		race.setRaceName("Zwerg");
+		race.setLanguage("de");
+		em.persist(race);
 		em.getTransaction().commit();
 
 		em.getTransaction().begin();
-		todo = new Metarace();
-		todo.setRaceName("Ork");
-		todo.setLanguage("de");
-		em.persist(todo);
+		race = new Metarace();
+		createRaceCategory(em, race, "A", 7);
+		createRaceCategory(em, race, "B", 4);
+		createRaceCategory(em, race, "C", 0);
+		race.setRaceName("Ork");
+		race.setLanguage("de");
+		em.persist(race);
 		em.getTransaction().commit();
 
+	}
+
+	private void createRaceCategory(EntityManager em, Metarace race, String categoryType, int points) {
+		MetaraceCategory category = new MetaraceCategory();
+		category.setCategory(categoryType);
+		category.setFreePoints(points);
+		category.setConnectedRace(race);
+		race.getCategories().add(category);
+		em.persist(category);
+		em.persist(race);
 	}
 }

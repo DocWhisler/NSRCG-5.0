@@ -1,4 +1,8 @@
-2016-05-31 21:39:55 jdbc[3]: exception
+2016-06-05 21:21:28 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Tabelle "METARACE" nicht gefunden
 Table "METARACE" not found; SQL statement:
 SELECT ID FROM METARACE WHERE ID <> ID [42102-191]
+2016-06-05 21:21:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "METARACECATEGORY" nicht gefunden
+Table "METARACECATEGORY" not found; SQL statement:
+SELECT ID FROM METARACECATEGORY WHERE ID <> ID [42102-191]

@@ -20,6 +20,10 @@ public class GeneratorCore {
 		}
 		return null;
 	}
+	
+	public List<String> getPossibleRaces(String raceCategory) {
+		return this.dbmanager.getSpecficRaces(raceCategory);
+	}
 
 	public int validateCharacter(SRCharacterOriginal character) {
 		// TODO Auto-generated method stub

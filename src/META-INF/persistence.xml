@@ -4,6 +4,7 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 	<persistence-unit name="metaraces" transaction-type="RESOURCE_LOCAL">
 		<class>de.shadowrunrpg.nscrg.core.entities.Metarace</class>
+		<class>de.shadowrunrpg.nscrg.core.entities.MetaraceCategory</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
 			<property name="javax.persistence.jdbc.url"

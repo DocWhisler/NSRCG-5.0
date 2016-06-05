@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import de.nsrcg.app.NsrcgMain;
 import de.shadowrunrpg.nscrg.core.GeneratorCore;
-import de.shadowrunrpg.nscrg.core.constances.ListType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,7 +22,7 @@ public class RacesChooseController  implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		List<String> raceList = this.core.getItemList(ListType.metaraces);
+		List<String> raceList = this.core.getPossibleRaces("A");
 		
 		ObservableList<String> options = 
 			    FXCollections.observableArrayList(raceList);
