@@ -31,13 +31,11 @@ public class DBManager {
 		EntityManager em = factory.createEntityManager();
 		// read the existing entries and write to console
 		Query q = em.createQuery("SELECT t FROM Metarace t");
+		@SuppressWarnings("unchecked")
 		List<Metarace> todoList = q.getResultList();
 		for (Metarace todo : todoList) {
-			System.out.println(todo);
 			resultList.add(todo.getRaceName());
 		}
-		System.out.println("Size: " + todoList.size());
-
 		em.close();		
 		return resultList;
 	}
