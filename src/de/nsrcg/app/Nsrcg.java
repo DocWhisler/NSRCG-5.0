@@ -13,30 +13,29 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class NsrcgMain extends Application {
+public class Nsrcg extends Application {
 
 	private Stage primaryStage;
+	private NsrcgClient client;
 	
 	@Override
-	public void start(Stage primaryStage) {		
+	public void start(Stage primaryStage) throws Exception {		
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("NSRCG 5.0");		
 		
-		NsrcgClient client = new NsrcgClient();
-		
 		try {
-			client.startConnection();
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+			this.client = new NsrcgClient(false);
+		} catch (Exception e) {
+			System.out.println("Verbindungsaufbau fehlgeschlagen");
 			e.printStackTrace();
-		}			
+		}	
 		
 		this.showMainView();
 	}
 	
 	public void showMainView() {		
 		try {
-			FXMLLoader loader = new FXMLLoader(NsrcgMain.class.getResource("view/NsrcgMainView.fxml"));
+			FXMLLoader loader = new FXMLLoader(Nsrcg.class.getResource("view/NsrcgMainView.fxml"));
 			Pane pane = loader.load();
 		
 			NsrcgMainViewController controller = loader.getController();
@@ -54,7 +53,7 @@ public class NsrcgMain extends Application {
 	public void showPrioritySystem() {
 		try{
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(NsrcgMain.class.getResource("view/PrioritySystemView.fxml"));
+			loader.setLocation(Nsrcg.class.getResource("view/PrioritySystemView.fxml"));
 			Pane pane = loader.load();
 
 			PrioritySystemController controller = loader.getController();
@@ -72,7 +71,7 @@ public class NsrcgMain extends Application {
 	public void showRaceChoose() {
 		try{
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(NsrcgMain.class.getResource("view/RasenauswahlView.fxml"));
+			loader.setLocation(Nsrcg.class.getResource("view/RasenauswahlView.fxml"));
 			Pane pane = loader.load();
 
 			RacesChooseController controller = loader.getController();
@@ -88,6 +87,11 @@ public class NsrcgMain extends Application {
 	}
 
 	public void exitProgramm(){
+		try {
+			client.connectionClose();
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
 		this.primaryStage.close();
 	}
 	

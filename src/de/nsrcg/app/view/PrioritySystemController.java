@@ -1,6 +1,6 @@
 package de.nsrcg.app.view;
 
-import de.nsrcg.app.NsrcgMain;
+import de.nsrcg.app.Nsrcg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -8,7 +8,7 @@ import javafx.scene.control.ToggleButton;
 
 public class PrioritySystemController {
 	
-	public NsrcgMain main;		
+	public Nsrcg main;		
 
 	private int[][] arrayOfDeath = new int[][]{
 		  { 0, 0, 0, 0, 0},
@@ -68,7 +68,7 @@ public class PrioritySystemController {
 		main.showMainView();
 	}
 	
-	public void setMain(NsrcgMain main) {
+	public void setMain(Nsrcg main) {
 		this.main = main;
 	}	
 }

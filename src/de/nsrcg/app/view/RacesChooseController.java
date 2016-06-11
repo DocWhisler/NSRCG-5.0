@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import de.nsrcg.app.NsrcgMain;
+import de.nsrcg.app.Nsrcg;
 import de.shadowrunrpg.nscrg.core.GeneratorCore;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +14,7 @@ import javafx.scene.control.ComboBox;
 
 public class RacesChooseController  implements Initializable {
 	
-	public NsrcgMain main; 
+	public Nsrcg main; 
 	
 	private GeneratorCore core = new GeneratorCore();
 
@@ -30,7 +30,7 @@ public class RacesChooseController  implements Initializable {
 		
 	}
 	
-	public void setMain(NsrcgMain main) {
+	public void setMain(Nsrcg main) {
 			this.main = main;
 	}
 }
