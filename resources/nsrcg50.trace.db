@@ -168,3 +168,117 @@ CREATE TABLE TEST(ID LONG PRIMARY KEY, NAME VARCHAR(255)) [90002-191]
 	at com.sun.glass.ui.win.WinApplication.lambda$null$141(Unknown Source)
 	at com.sun.glass.ui.win.WinApplication$$Lambda$37/1109371569.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
+2016-06-12 17:00:01 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]" [50000-191]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:373)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:356)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2888)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:154)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:99)
+	at org.h2.engine.Database.getPageStore(Database.java:2460)
+	at org.h2.engine.Database.open(Database.java:692)
+	at org.h2.engine.Database.openDatabase(Database.java:270)
+	at org.h2.engine.Database.<init>(Database.java:264)
+	at org.h2.engine.Engine.openSession(Engine.java:65)
+	at org.h2.engine.Engine.openSession(Engine.java:175)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:153)
+	at org.h2.engine.Engine.createSession(Engine.java:136)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at de.nsrcg.app.db.NsrcgClient.startConnection(NsrcgClient.java:47)
+	at de.nsrcg.app.db.NsrcgClient.<init>(NsrcgClient.java:15)
+	at de.nsrcg.app.Nsrcg.start(Nsrcg.java:27)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$153(Unknown Source)
+	at com.sun.javafx.application.LauncherImpl$$Lambda$51/2144316309.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$166(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$45/1051754451.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$164(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$47/768093560.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$165(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$46/1775282465.run(Unknown Source)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(Unknown Source)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$141(Unknown Source)
+	at com.sun.glass.ui.win.WinApplication$$Lambda$37/1109371569.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]" [50000-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 40 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:342)
+	... 35 more
+2016-06-12 17:00:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Das Objekt wurde bereits geschlossen
+The object is already closed [90007-191]
+2016-06-12 17:01:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "TEST" nicht gefunden
+Table "TEST" not found; SQL statement:
+SELECT * FROM TEST [42102-191]
+2016-06-12 17:03:02 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]" [50000-191]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:373)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:356)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2888)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:154)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:99)
+	at org.h2.engine.Database.getPageStore(Database.java:2460)
+	at org.h2.engine.Database.open(Database.java:692)
+	at org.h2.engine.Database.openDatabase(Database.java:270)
+	at org.h2.engine.Database.<init>(Database.java:264)
+	at org.h2.engine.Engine.openSession(Engine.java:65)
+	at org.h2.engine.Engine.openSession(Engine.java:175)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:153)
+	at org.h2.engine.Engine.createSession(Engine.java:136)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at de.nsrcg.app.db.NsrcgClient.startConnection(NsrcgClient.java:47)
+	at de.nsrcg.app.db.NsrcgClient.<init>(NsrcgClient.java:15)
+	at de.nsrcg.app.Nsrcg.start(Nsrcg.java:27)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$153(Unknown Source)
+	at com.sun.javafx.application.LauncherImpl$$Lambda$51/440579473.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$166(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$45/1051754451.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$164(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$47/995746293.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$165(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$46/1775282465.run(Unknown Source)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(Unknown Source)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$141(Unknown Source)
+	at com.sun.glass.ui.win.WinApplication$$Lambda$37/1109371569.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]" [50000-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 40 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/Projekte/Eclipse Projekte/NSRCG-5.0/resources/nsrcg50.mv.db [1.4.191/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:342)
+	... 35 more
+2016-06-12 17:03:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Das Objekt wurde bereits geschlossen
+The object is already closed [90007-191]

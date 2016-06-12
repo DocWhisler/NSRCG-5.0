@@ -24,7 +24,7 @@ public class Nsrcg extends Application {
 		this.primaryStage.setTitle("NSRCG 5.0");		
 		
 		try {
-			this.client = new NsrcgClient(false);
+			this.client = new NsrcgClient(true);
 		} catch (Exception e) {
 			System.out.println("Verbindungsaufbau fehlgeschlagen");
 			e.printStackTrace();

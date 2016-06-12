@@ -19,7 +19,7 @@ public class NsrcgClient {
 		if (!rset.next() || forceInit)
 		{
 			System.out.println("INIT");
-			this.initDatabase();
+			this.initDatabase(forceInit);
 		}	
 		else
 		{
@@ -31,10 +31,10 @@ public class NsrcgClient {
 		this.connection.close();
 	}
 
-	private void initDatabase() {
+	private void initDatabase(boolean forceInit) {
 		
 		try {
-			new InitDatabsae(this.connection);
+			new InitDatabsae(this.connection, forceInit);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}		
@@ -47,12 +47,12 @@ public class NsrcgClient {
 		this.connection = DriverManager.getConnection("jdbc:h2:./resources/nsrcg50", "Nsrcg-5.0", "nsrcg");
 		System.out.println(connection.getCatalog());
 		
-		Statement stmnt = connection.createStatement();
-		ResultSet rs = stmnt.executeQuery("SELECT * FROM TEST");
-		
-		while (rs.next()) {
-			System.out.println("Name '" + rs.getString("NAME") + "'");			
-		}		
+//		Statement stmnt = connection.createStatement();
+//		ResultSet rs = stmnt.executeQuery("SELECT * FROM TEST");
+//		
+//		while (rs.next()) {
+//			System.out.println("Name '" + rs.getString("NAME") + "'");			
+//		}		
 	}
 	
 	private void getTableInformations() throws SQLException {		

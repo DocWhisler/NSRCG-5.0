@@ -8,10 +8,34 @@ import java.sql.Statement;
 public class InitDatabsae {
 	
 	private Connection connection;
+	private boolean forceInit;
 	
-	public InitDatabsae(Connection conn) throws SQLException {
+	public InitDatabsae(Connection conn, boolean forceInit) throws SQLException {
 		this.connection = conn;
-		this.initSRCharacter();
+		this.forceInit = forceInit;
+		
+		if(forceInit)
+			this.dropAllTables();
+		
+//		this.initSRCharacter();
+	}
+
+	private void dropAllTables() throws SQLException {
+		Statement stmnt = connection.createStatement();
+        String tablesQ = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='PUBLIC'";
+        ResultSet tablesRS = stmnt.executeQuery(tablesQ);
+        
+        String query = "DROP TABLE IF EXISTS ";
+        String table = "";        
+        
+        while (tablesRS.next()) {
+        	table = tablesRS.getString(1);
+        	System.out.println("Drop table " + table);
+        	
+        	query += table;        	
+        	stmnt.execute(query);
+		}
+		
 	}
 
 	private void initSRCharacter() throws SQLException {
@@ -25,7 +49,7 @@ public class InitDatabsae {
 		//		DELETE FROM TEST WHERE ID=2;		
 		
 		String query = "CREATE TABLE IF NOT EXISTS SRCHARACTER"
-                + "(ID INT PRIMARY KEY AUTO_INCREMENT(1,1) NOT NULL, NAME VARCHAR(255))"; ;		
+                + "(ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL, NAME VARCHAR(255))"; 
 		Statement stmnt = connection.createStatement();
 		stmnt.executeUpdate(query);
 		
@@ -34,7 +58,7 @@ public class InitDatabsae {
 	}
 	
 	private void printTables() throws SQLException{
-		System.out.println("Liste Tabellen...");
+		System.out.println("Liste vorhandener Tabellen...");
 		Statement stmnt = connection.createStatement();
         String tablesQ = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='PUBLIC'";
         ResultSet tablesRS = stmnt.executeQuery(tablesQ);
