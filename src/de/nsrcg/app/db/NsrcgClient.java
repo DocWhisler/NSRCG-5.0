@@ -15,8 +15,7 @@ public class NsrcgClient {
 		this.startConnection();		
 		this.getTableInformations();
 			
-//		ResultSet rset = connection.getMetaData().getTables(null, null, "%", null);
-		ResultSet rset = connection.getMetaData().getTables(null, null, "SRCHARACTER", null);
+		ResultSet rset = connection.getMetaData().getTables(null, null, "%", null);
 		if (!rset.next() || forceInit)
 		{
 			System.out.println("INIT");
@@ -33,10 +32,9 @@ public class NsrcgClient {
 	}
 
 	private void initDatabase() {
-		InitDatabsae init = null;
 		
 		try {
-			init = new InitDatabsae(this.connection);
+			new InitDatabsae(this.connection);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}		

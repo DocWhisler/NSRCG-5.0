@@ -29,10 +29,6 @@ public class InitDatabsae {
 		Statement stmnt = connection.createStatement();
 		stmnt.executeUpdate(query);
 		
-		String insertQ = "INSERT INTO SRCHARACTER" 
-                + " VALUES(TRANSACTION_ID(),'Hello World!')";
-        stmnt.executeUpdate(insertQ); 
-		
 		System.out.println("SRCHARACTER created");
 		this.printTables();
 	}
