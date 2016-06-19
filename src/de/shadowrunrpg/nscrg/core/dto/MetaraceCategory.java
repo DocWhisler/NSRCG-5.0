@@ -1,4 +1,4 @@
-package de.shadowrunrpg.nscrg.core.entities;
+package de.shadowrunrpg.nscrg.core.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

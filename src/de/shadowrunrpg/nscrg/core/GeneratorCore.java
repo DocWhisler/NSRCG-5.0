@@ -3,8 +3,12 @@ package de.shadowrunrpg.nscrg.core;
 import java.util.List;
 
 import de.nsrcg.app.models.shadowrun5.SRCharacterOriginal;
+import de.shadowrunrpg.nscrg.core.constances.CategoryType;
 import de.shadowrunrpg.nscrg.core.constances.ListType;
 import de.shadowrunrpg.nscrg.core.database.DBManager;
+import de.shadowrunrpg.nscrg.core.dto.Metarace;
+import de.shadowrunrpg.nscrg.core.request.MetaModelRequest;
+import de.shadowrunrpg.nscrg.core.response.MetaModelResponse;
 
 public class GeneratorCore {
 	
@@ -14,20 +18,26 @@ public class GeneratorCore {
 		this.dbmanager = new DBManager(true);
 	}
 
-	public List<String> getItemList(ListType name) {
+	public List<Metarace> getItemList(ListType name) {
 		if(name == ListType.metaraces) {
-			return this.dbmanager.getRaces();
+			return this.dbmanager.getRaces(null);
 		}
 		return null;
-	}
-	
-	public List<String> getPossibleRaces(String raceCategory) {
-		return this.dbmanager.getSpecficRaces(raceCategory);
 	}
 
 	public int validateCharacter(SRCharacterOriginal character) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	public MetaModelResponse getMetaModelForCategories(MetaModelRequest request) {
+		MetaModelResponse response = new MetaModelResponse();
+		
+		response.setAttributes(this.dbmanager.getAttribute(request.getAttribut()));
+		response.setRaceList(this.dbmanager.getRaces(request.getRace()));
+		
+		return response;
+	}
+
 
 }
