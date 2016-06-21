@@ -2,17 +2,14 @@ package de.shadowrunrpg.nscrg.core;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import de.shadowrunrpg.nscrg.core.constances.CategoryType;
-import de.shadowrunrpg.nscrg.core.dto.Metarace;
 import de.shadowrunrpg.nscrg.core.request.MetaModelRequest;
 import de.shadowrunrpg.nscrg.core.response.MetaModelResponse;
 
-public class GeneratorCoreTest {
+public class CoreRaceTest {
 
 	private GeneratorCore core;
 	private MetaModelRequest request;
@@ -27,7 +24,6 @@ public class GeneratorCoreTest {
 	@Test
 	public void raceListCategoryA() {
 		request.setRace(CategoryType.A);
-		request.setAttribut(CategoryType.B);
 		
 		MetaModelResponse respone = core.getMetaModelForCategories(request);
 		
@@ -37,22 +33,17 @@ public class GeneratorCoreTest {
 		assertEquals("Mensch", "Mensch", respone.getRaceList().get(2).getRaceName());
 		assertEquals("Zwerg", "Zwerg", respone.getRaceList().get(3).getRaceName());
 		assertEquals("Ork", "Ork", respone.getRaceList().get(4).getRaceName());
-		
-		assertEquals("test", 20, respone.getAttributes().getAttribut());
 	}
 	
 	@Test
 	public void raceListCategoryB() {
 		request.setRace(CategoryType.B);
-		request.setAttribut(CategoryType.A);
 		respone = core.getMetaModelForCategories(request);
 		assertEquals("Troll", "Troll", respone.getRaceList().get(0).getRaceName());
 		assertEquals("Elf", "Elf", respone.getRaceList().get(1).getRaceName());
 		assertEquals("Mensch", "Mensch", respone.getRaceList().get(2).getRaceName());
 		assertEquals("Zwerg", "Zwerg", respone.getRaceList().get(3).getRaceName());
 		assertEquals("Ork", "Ork", respone.getRaceList().get(4).getRaceName());
-		
-		assertEquals("test", 24, respone.getAttributes().getAttribut());
 	}
 	
 	@Test

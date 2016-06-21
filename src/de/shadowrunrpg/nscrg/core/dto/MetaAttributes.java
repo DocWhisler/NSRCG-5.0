@@ -54,7 +54,4 @@ public class MetaAttributes {
 	public int getMaxAttribut() {
 		return this.maxAttribut;
 	}
-	
-	
-
 }

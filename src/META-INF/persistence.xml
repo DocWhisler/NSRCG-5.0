@@ -6,6 +6,7 @@
 		<class>de.shadowrunrpg.nscrg.core.dto.Metarace</class>
 		<class>de.shadowrunrpg.nscrg.core.dto.MetaraceCategory</class>
 		<class>de.shadowrunrpg.nscrg.core.dto.MetaAttributes</class>
+		<class>de.shadowrunrpg.nscrg.core.dto.MetaListElement</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
 			<property name="javax.persistence.jdbc.url"

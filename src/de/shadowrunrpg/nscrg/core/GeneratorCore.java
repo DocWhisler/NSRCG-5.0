@@ -3,7 +3,6 @@ package de.shadowrunrpg.nscrg.core;
 import java.util.List;
 
 import de.nsrcg.app.models.shadowrun5.SRCharacterOriginal;
-import de.shadowrunrpg.nscrg.core.constances.CategoryType;
 import de.shadowrunrpg.nscrg.core.constances.ListType;
 import de.shadowrunrpg.nscrg.core.database.DBManager;
 import de.shadowrunrpg.nscrg.core.dto.Metarace;
@@ -35,9 +34,8 @@ public class GeneratorCore {
 		
 		response.setAttributes(this.dbmanager.getAttribute(request.getAttribut()));
 		response.setRaceList(this.dbmanager.getRaces(request.getRace()));
+		response.setListOfAttributes(this.dbmanager.getAttributList());
 		
 		return response;
 	}
-
-
 }

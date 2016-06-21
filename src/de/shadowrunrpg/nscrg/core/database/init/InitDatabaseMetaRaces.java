@@ -1,4 +1,4 @@
-package de.shadowrunrpg.nscrg.core.database;
+package de.shadowrunrpg.nscrg.core.database.init;
 
 import java.util.List;
 
